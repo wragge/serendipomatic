@@ -5,17 +5,13 @@
 
 {% block content %}
 
-<p><b>Query Terms:</b> {{ query_terms.keywords|join:', ' }}</p>
-<p style="float:right;">
-    <a href="{% url 'site-index' %}"><button class="magic" tabindex="5">Start Over</button></a>
-</p>
 <div id="container">
 {% for item in items %}
 
      <!-- Change the number in the add filter depending on the number of tabindexes required before results. -->
-	<div class="element transition metal" tabindex="{{ forloop.counter|add:5 }}">
+	<div id="item{{ forloop.counter }}" class="element transition metal" tabindex="{{ forloop.counter|add:5 }}">
 		<p><a href="{{ item.url }}" target="_blank">
-            <img src="{{ item.thumbnail }}" alt="{{ item.title }}" />
+            <img id="item{{ forloop.counter }}_img" src="{{ item.thumbnail }}" alt="{{ item.title }}" />
         </a><br />
 		<a href="{{ item.url }}" target="_blank">{{ item.title }}</a><br />
 		Name<br />
