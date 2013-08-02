@@ -10,6 +10,7 @@ simplejson
 python-dateutil
 flickrapi
 PIL
+guess-language
 
 # should be installed as dependencies of bibs but don't seem to be
 PyYAML
